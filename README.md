@@ -13,10 +13,7 @@
 
 Используется `react-native-ble-plx`, поэтому **Expo Go не подходит** (нужен нативный билд).
 
-Для разработки есть два рабочих варианта:
-
-- **Локальная сборка**: `expo run:android` / `expo run:ios`
-- **EAS dev build** (рекомендуется для команды/CI): будет настроено в `eas.json`
+Для разработки используй локальную сборку: `expo run:android` / `expo run:ios`.
 
 ## Требования
 
@@ -44,32 +41,6 @@ iOS:
 
 ```bash
 yarn ios
-```
-
-## EAS Build / Submit (стор и dev build)
-
-Разовая инициализация:
-
-```bash
-npx eas-cli login
-npx eas-cli build:configure
-```
-
-Dev build (для тестов BLE на реальном устройстве):
-
-```bash
-npx eas-cli build -p android --profile development
-npx eas-cli build -p ios --profile development
-```
-
-Production build + submit:
-
-```bash
-npx eas-cli build -p android --profile production
-npx eas-cli submit -p android --profile production
-
-npx eas-cli build -p ios --profile production
-npx eas-cli submit -p ios --profile production
 ```
 
 ## Линт
@@ -112,7 +83,7 @@ Mobile app to control an addressable LED strip over **Bluetooth Low Energy (BLE)
 
 ### BLE and Expo Go
 
-Uses `react-native-ble-plx`, so **Expo Go is not supported** — a native build is required. Options: **Local:** `expo run:android` / `expo run:ios`. **EAS dev build** (recommended): see `eas.json`.
+Uses `react-native-ble-plx`, so **Expo Go is not supported** — a native build is required. Use local build: `expo run:android` / `expo run:ios`.
 
 ### Requirements
 
@@ -124,10 +95,6 @@ Node.js (LTS), Yarn 1.x, Android Studio (Android), Xcode (iOS).
 yarn install
 yarn android   # or yarn ios
 ```
-
-### EAS
-
-`npx eas-cli login` and `build:configure` once. Dev: `npx eas-cli build -p android --profile development` (and ios). Production: `build` + `submit` with `production` profile.
 
 ### Lint
 
