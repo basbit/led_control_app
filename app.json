@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "LED Control",
+    "slug": "led-control-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#0f0f1e",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rbaster.ledcontrol",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "The app needs Bluetooth access to control the LED strip",
+        "NSBluetoothPeripheralUsageDescription": "The app needs Bluetooth access to control the LED strip",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.rbaster.ledcontrol",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon-foreground.png",
+        "backgroundImage": "./assets/adaptive-icon-background.png"
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {},
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1"
+          },
+          "android": {
+            "minSdkVersion": 24
+          }
+        }
+      ],
+      "./plugins/withAndroidBlePermissions"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a287db85-80cb-42b0-bec9-0affc727f502"
+      }
+    }
+  }
+}
